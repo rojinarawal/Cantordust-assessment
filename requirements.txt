@@ -1,0 +1,6 @@
+langgraph
+langchain-google-genai
+pdfplumber
+requests
+pydantic
+python-dotenv

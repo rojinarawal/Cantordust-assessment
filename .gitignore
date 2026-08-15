@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+.venv/
+
+# Environment variables / secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Testing
+.pytest_cache/
+
+# IDE / OS
+.vscode/
+.DS_Store
+
+# Generated outputs
+outputs/*.json
+outputs/*.md
