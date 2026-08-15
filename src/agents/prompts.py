@@ -36,4 +36,13 @@ For every field:
 - For importer_paperwork specifically, list what's still needed even
   though this isn't literally "extracted" from a source - reason about
   what the import checklist requires versus what you found.
+- Set sources_disagree to true ONLY if sources give genuinely different
+  values (e.g. weight: 11kg vs 18kg). If sources agree, or only one
+  source mentions the field, set sources_disagree to false, even if you
+  add an explanatory note.
+- Set is_pending to true whenever an item is not available in any source
+  yet (missing certificates, no label photo, etc) - this is common for
+  importer_paperwork fields. Use confidence only for how sure you are
+  about a value that DOES exist; when is_pending is true, set confidence
+  to 'low'.
 """
