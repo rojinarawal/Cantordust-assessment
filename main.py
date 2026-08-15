@@ -1,3 +1,8 @@
-from dotenv import load_dotenv
+"""
+main.py — it only calls the pipeline.
+"""
 
-load_dotenv()
+from src.pipeline import run
+
+if __name__ == "__main__":
+    run()
