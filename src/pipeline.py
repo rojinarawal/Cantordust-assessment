@@ -7,8 +7,10 @@ import json
 from pathlib import Path
 from src.agents.extraction_agent import run_extraction
 from src.reconciliation.reconciler import build_reconciliation_summary
+from src.rendering.draft_writer import generate_markdown_draft
 
-OUTPUT_PATH = Path("outputs/structured_data.json")
+JSON_OUTPUT_PATH = Path("outputs/structured_data.json")
+DRAFT_OUTPUT_PATH = Path("outputs/draft.md")
 
 def run() -> None:
     record = run_extraction()
@@ -19,9 +21,10 @@ def run() -> None:
         "reconciliation": reconciliation,
     }
 
-    OUTPUT_PATH.parent.mkdir(exist_ok=True)
-    OUTPUT_PATH.write_text(json.dumps(record.model_dump(), indent=2))
+    JSON_OUTPUT_PATH.parent.mkdir(exist_ok=True)
+    JSON_OUTPUT_PATH.write_text(json.dumps(combined_output, indent=2), encoding='utf-8')
+    print(f"Structured data written to: {JSON_OUTPUT_PATH.resolve()}")
 
-    print(f"Structured data written to {OUTPUT_PATH}")
-    print(json.dumps(combined_output, indent=2))
-    print(f"Wrote to: {OUTPUT_PATH.resolve()}")
+    draft = generate_markdown_draft(record, reconciliation)
+    DRAFT_OUTPUT_PATH.write_text(draft, encoding='utf-8')
+    print(f"Human-readable draft written to: {DRAFT_OUTPUT_PATH.resolve()}")

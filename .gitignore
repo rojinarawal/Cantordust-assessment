@@ -15,7 +15,3 @@ __pycache__/
 # IDE / OS
 .vscode/
 .DS_Store
-
-# Generated outputs
-outputs/*.json
-outputs/*.md

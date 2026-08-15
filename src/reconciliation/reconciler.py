@@ -27,20 +27,20 @@ def _all_fields(record: ProductRecord) -> list[tuple[str, ExtractedField]]:
 
 
 def pending_fields(record: ProductRecord) -> list[tuple[str, ExtractedField]]:
-    """Fields with nothing available yet - these need to be chased."""
-    return [(c, f) for c, f in _all_fields(record) if f.confidence == "pending"]
-
-def low_confidence_fields(record: ProductRecord) -> list[tuple[str, ExtractedField]]:
-    """Fields only backed by verbal claims or guesses - not yet in writing."""
+    """Fields not available in any source - need to be chased from the factory."""
     return [(c, f) for c, f in _all_fields(record) if f.is_pending]
 
 
+def low_confidence_fields(record: ProductRecord) -> list[tuple[str, ExtractedField]]:
+    """Fields only backed by verbal claims or guesses, but NOT already
+    pending (avoids double-listing the same field in two sections)."""
+    return [(c, f) for c, f in _all_fields(record) if f.confidence == "low" and not f.is_pending]
+
+
 def conflicting_fields(record: ProductRecord) -> list[tuple[str, ExtractedField]]:
-    """Fields where sources genuinely gave different values."""
     return [(c, f) for c, f in _all_fields(record) if f.sources_disagree]
 
-# Templated by category, not by individual field - a handful of honest
-# generic asks covers this task without needing per-field special-casing.
+
 _QUESTION_TEMPLATES = {
     "product_identity": "Please confirm the exact {field} for the SUN-5K-G06P3-EU-AM2-P1 in writing.",
     "manufacturer_identity": "Please confirm {field} in writing on company letterhead.",
@@ -49,15 +49,12 @@ _QUESTION_TEMPLATES = {
     "importer_paperwork": "Please supply: {field}.",
 }
 
+
 def generate_factory_questions(record: ProductRecord) -> list[str]:
-    """Concrete questions to send the factory, derived from pending and
-    low-confidence fields. Deterministic and traceable back to a specific
-    field - a reviewer can see exactly why each question exists."""
     questions = []
     for category, field in pending_fields(record) + low_confidence_fields(record):
         template = _QUESTION_TEMPLATES.get(category, "Please confirm {field} in writing.")
         questions.append(template.format(field=field.field_name.replace("_", " ")))
-    # de-duplicate while preserving order
     seen = set()
     unique = []
     for q in questions:
@@ -68,8 +65,6 @@ def generate_factory_questions(record: ProductRecord) -> list[str]:
 
 
 def build_reconciliation_summary(record: ProductRecord) -> dict:
-    """The full reconciliation view: pending, low-confidence, conflicts,
-    and the factory question list, all in one serializable dict."""
     return {
         "pending_from_factory": [
             {"category": CATEGORY_LABELS[c], "field": f.field_name}
