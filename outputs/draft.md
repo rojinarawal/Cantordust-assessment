@@ -1,7 +1,6 @@
 # SunBridge Trading — Bangladesh Import Compliance Draft
 *Generated 2026-08-15 — SUN-5K-G06P3-EU-AM2-P1, 5kW grid-tied inverter, Deye (China)*
 
-> This draft is an early working document, not a final compliance file. Several items are marked **pending from manufacturer** — that is expected at this stage, not a gap in this report. See the questions list at the end for what to chase next.
 
 ## 1. Product Identity
 

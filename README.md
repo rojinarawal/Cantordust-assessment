@@ -90,7 +90,7 @@ enough to answer. The agent decides on its own to fetch the PDF; the code
 never fetches it and hands the content over pre-read. That autonomy is
 what the assessment brief specifically asks for.
 
-**Model: Gemini 2.5 Flash / 3 Flash** (see `src/config.py` for the exact
+**Model: Gemini 3.5 Flash** (see `src/config.py` for the exact
 string in use) via `langchain-google-genai`, chosen because it was
 available on Google's free tier and supports tool calling, which the
 ReAct loop depends on. Swapping providers only requires changing
