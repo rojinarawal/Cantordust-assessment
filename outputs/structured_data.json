@@ -4,7 +4,7 @@
       {
         "field_name": "model_number",
         "value": "SUN-5K-G06P3-EU-AM2-P1",
-        "source": "datasheet, buyer_form, call_notes",
+        "source": "datasheet,buyer_form,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -13,7 +13,7 @@
       {
         "field_name": "rated_power",
         "value": "5 kW",
-        "source": "datasheet, buyer_form, call_notes",
+        "source": "datasheet,buyer_form,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -76,7 +76,7 @@
       {
         "field_name": "max_efficiency",
         "value": "98.2%",
-        "source": "datasheet, call_notes",
+        "source": "datasheet,call_notes",
         "confidence": "medium",
         "is_pending": false,
         "sources_disagree": false,
@@ -85,7 +85,7 @@
       {
         "field_name": "weight",
         "value": "11 kg",
-        "source": "datasheet, call_notes",
+        "source": "datasheet,call_notes",
         "confidence": "medium",
         "is_pending": false,
         "sources_disagree": true,
@@ -103,7 +103,7 @@
       {
         "field_name": "ip_rating",
         "value": "IP65",
-        "source": "datasheet, call_notes",
+        "source": "datasheet,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -114,7 +114,7 @@
       {
         "field_name": "company_name",
         "value": "Ningbo Deye Inverter Technology Co., Ltd.",
-        "source": "datasheet, buyer_form, call_notes",
+        "source": "datasheet,buyer_form,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -132,7 +132,7 @@
       {
         "field_name": "country_of_origin",
         "value": "China",
-        "source": "datasheet, buyer_form, call_notes",
+        "source": "datasheet,buyer_form,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -161,7 +161,7 @@
       {
         "field_name": "in_writing",
         "value": "None",
-        "source": "buyer_form, call_notes",
+        "source": "buyer_form,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -172,7 +172,7 @@
       {
         "field_name": "label_model_number",
         "value": "SUN-5K-G06P3-EU-AM2-P1",
-        "source": "datasheet, buyer_form",
+        "source": "datasheet,buyer_form",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -181,7 +181,7 @@
       {
         "field_name": "label_rated_power",
         "value": "5 kW",
-        "source": "datasheet, buyer_form",
+        "source": "datasheet,buyer_form",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -226,7 +226,7 @@
       {
         "field_name": "label_protection_rating",
         "value": "IP65",
-        "source": "datasheet, call_notes",
+        "source": "datasheet,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -235,7 +235,7 @@
       {
         "field_name": "label_manufacturer_name",
         "value": "Ningbo Deye Inverter Technology Co., Ltd.",
-        "source": "datasheet, buyer_form",
+        "source": "datasheet,buyer_form",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
@@ -244,7 +244,7 @@
       {
         "field_name": "label_country_of_origin",
         "value": "China",
-        "source": "datasheet, buyer_form, call_notes",
+        "source": "datasheet,buyer_form,call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,

@@ -14,25 +14,36 @@ CATEGORY_TITLES = {
     "importer_paperwork": "5. Importer Paperwork",
 }
 
-CONFIDENCE_TAG = {
-    "high": "Confirmed",
-    "medium": "Written, single source",
-    "low": "Verbal / unverified",
-}
+def _confidence_tag(field: ExtractedField) -> str:
+    """Pick a display tag based on actual source count + confidence,
+    rather than assuming what 'medium' means - medium confidence can come
+    from a single source OR from multiple sources that disagree, and
+    those need different labels."""
+    source_count = len([s for s in field.source.split(",") if s.strip() and s.strip() != "none"])
+
+    if field.sources_disagree:
+        return "🟡 Written, sources disagree"
+    if field.confidence == "high":
+        return "✅ Confirmed"
+    if field.confidence == "low":
+        return "⚠️ Verbal / unverified"
+    # medium confidence
+    if source_count > 1:
+        return "🟡 Written, multiple sources (partial match)"
+    return "🟡 Written, single source"
 
 
 def _format_field(field: ExtractedField) -> str:
     if field.is_pending:
         line = f"- **{field.field_name.replace('_', ' ').title()}**: _Pending from manufacturer_"
     else:
-        tag = CONFIDENCE_TAG.get(field.confidence, "")
+        tag = _confidence_tag(field)
         line = f"- **{field.field_name.replace('_', ' ').title()}**: {field.value} ({tag})"
     if field.sources_disagree:
-        line += "  \n  **Sources disagree** — " + field.note
+        line += "  \n  ⚠️ **Sources disagree** — " + field.note
     elif field.note:
         line += f"  \n  _{field.note}_"
     return line
-
 
 def _format_category(category_key: str, fields: list[ExtractedField]) -> str:
     title = CATEGORY_TITLES[category_key]
