@@ -4,38 +4,83 @@
       {
         "field_name": "model_number",
         "value": "SUN-5K-G06P3-EU-AM2-P1",
-        "source": "datasheet, buyer_form",
-        "confidence": "high",
-        "is_pending": false,
-        "sources_disagree": false,
-        "note": "The buyer form and datasheet specify the full model number SUN-5K-G06P3-EU-AM2-P1. The call notes mention the base model SUN-5K-G06P3, which is consistent."
-      },
-      {
-        "field_name": "variant",
-        "value": "-EU-AM2-P1",
-        "source": "datasheet, buyer_form",
-        "confidence": "high",
-        "is_pending": false,
-        "sources_disagree": false,
-        "note": "Both written sources specify this exact variant suffix."
-      },
-      {
-        "field_name": "rated_power",
-        "value": "5 kW (5000 W)",
         "source": "datasheet, buyer_form, call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
-        "note": "All three sources agree on the rated power of 5 kW."
+        "note": "The buyer form and datasheet specify the full model SUN-5K-G06P3-EU-AM2-P1, while the call notes use the shortened series name SUN-5K-G06P3."
       },
       {
-        "field_name": "key_electrical_specs",
-        "value": "Max DC Input 6.5 kW, Max DC Voltage 1100V, Start-up Voltage 140V, MPPT Range 120-1000V, Max Current 20+20A, Max Short Circuit 30+30A, 2 MPPTs (1+1 strings). Max Active Power 5.5 kW, Rated Voltage 3L/N/PE 220/380V or 230/400V, Rated Current 7.6/7.3A, Max Current 8.4/8A, Three Phase. Max Efficiency 98.2%, Euro Efficiency 97.5%, MPPT >99%.",
+        "field_name": "rated_power",
+        "value": "5 kW",
+        "source": "datasheet, buyer_form, call_notes",
+        "confidence": "high",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": "Datasheet lists 5 kW, buyer form lists 5000 W, and call notes list 5 kW."
+      },
+      {
+        "field_name": "max_dc_input_power",
+        "value": "6.5 kW",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": "Extracted from the technical data table for the 5K model."
+      },
+      {
+        "field_name": "max_dc_input_voltage",
+        "value": "1100 V",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "mppt_operating_range",
+        "value": "120-1000 V",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "max_dc_input_current",
+        "value": "20 A + 20 A",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "rated_ac_grid_output_current",
+        "value": "7.6 A / 7.3 A",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": "Corresponds to 220V/380V and 230V/400V grid configurations respectively."
+      },
+      {
+        "field_name": "rated_output_voltage",
+        "value": "3L/N/PE 220/380V, 230/400V",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "max_efficiency",
+        "value": "98.2%",
         "source": "datasheet, call_notes",
         "confidence": "medium",
         "is_pending": false,
         "sources_disagree": false,
-        "note": "Detailed specs are only in the datasheet. Call notes verbally mention 'high 90s efficiency', which is consistent with the datasheet's 98.2% max efficiency."
+        "note": "Datasheet lists 98.2% for the 5kW model on page 2, and Max. efficiency up to 98.5% on page 1. Call notes mention high 90s efficiency verbally."
       },
       {
         "field_name": "weight",
@@ -44,27 +89,36 @@
         "confidence": "medium",
         "is_pending": false,
         "sources_disagree": true,
-        "note": "The installer guessed the weight was 'maybe 18 kg' on the phone, but the official manufacturer datasheet specifies the weight as 11 kg."
+        "note": "The datasheet specifies a weight of 11 kg, whereas the installer in the call notes guessed it might be around 18 kg."
       },
       {
-        "field_name": "dimensions",
+        "field_name": "cabinet_size",
         "value": "283 x 463 x 178 mm",
         "source": "datasheet",
         "confidence": "medium",
         "is_pending": false,
         "sources_disagree": false,
-        "note": "Cabinet size excluding connectors and brackets is only provided in the manufacturer datasheet."
+        "note": "Excluding connectors and brackets."
+      },
+      {
+        "field_name": "ip_rating",
+        "value": "IP65",
+        "source": "datasheet, call_notes",
+        "confidence": "high",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": "Both datasheet and call notes agree on IP65."
       }
     ],
     "manufacturer_identity": [
       {
-        "field_name": "legal_company_name",
+        "field_name": "company_name",
         "value": "Ningbo Deye Inverter Technology Co., Ltd.",
-        "source": "datasheet, buyer_form",
+        "source": "datasheet, buyer_form, call_notes",
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
-        "note": "Both written sources list the full legal name. Call notes refer to 'Deye', which is consistent."
+        "note": "Datasheet and buyer form list the full name. Call notes refer to the manufacturer as Deye."
       },
       {
         "field_name": "factory_address",
@@ -73,7 +127,7 @@
         "confidence": "medium",
         "is_pending": false,
         "sources_disagree": false,
-        "note": "Address is only provided in the manufacturer datasheet."
+        "note": ""
       },
       {
         "field_name": "country_of_origin",
@@ -82,214 +136,186 @@
         "confidence": "high",
         "is_pending": false,
         "sources_disagree": false,
-        "note": "All sources agree that the manufacturer is located in China."
+        "note": ""
       }
     ],
     "test_evidence": [
       {
-        "field_name": "grid_connection_standards",
-        "value": "IEC 61727, IEC 62116, EN 50549",
+        "field_name": "standards_claimed",
+        "value": "IEC 61727, IEC 62116, EN 50549, IEC/EN 61000-6-1/2/3/4, IEC/EN 62109-1, IEC/EN 62109-2",
         "source": "datasheet",
         "confidence": "medium",
         "is_pending": false,
         "sources_disagree": false,
-        "note": "Claimed in the datasheet, but physical certificates are not yet provided."
+        "note": "These standards are explicitly claimed on the manufacturer's datasheet."
       },
       {
-        "field_name": "safety_emc_standards",
-        "value": "IEC/EN 61000-6-1/2/3/4, IEC/EN 62109-1, IEC/EN 62109-2",
-        "source": "datasheet",
-        "confidence": "medium",
-        "is_pending": false,
-        "sources_disagree": false,
-        "note": "Claimed in the datasheet, but physical certificates are not yet provided."
-      },
-      {
-        "field_name": "sgs_certification_claim",
-        "value": "SGS Certification",
+        "field_name": "certification_bodies_mentioned",
+        "value": "SGS",
         "source": "call_notes",
         "confidence": "low",
-        "is_pending": true,
+        "is_pending": false,
         "sources_disagree": false,
-        "note": "Mentioned verbally by the installer, but nothing is in writing and no certificate is available yet."
+        "note": "Mentioned verbally by the installer on the phone; no written proof or certificate from SGS is currently available."
       },
       {
-        "field_name": "written_certificates_available",
+        "field_name": "in_writing",
         "value": "None",
         "source": "buyer_form, call_notes",
-        "confidence": "low",
-        "is_pending": true,
+        "confidence": "high",
+        "is_pending": false,
         "sources_disagree": false,
-        "note": "Both the buyer form ('Attached docs: none') and call notes ('nothing in writing') confirm that no physical certificates are currently on hand."
+        "note": "Buyer form states Attached docs: none and call notes confirm nothing in writing."
       }
     ],
     "labeling": [
       {
-        "field_name": "model_number_on_label",
+        "field_name": "label_model_number",
         "value": "SUN-5K-G06P3-EU-AM2-P1",
         "source": "datasheet, buyer_form",
-        "confidence": "low",
-        "is_pending": true,
+        "confidence": "high",
+        "is_pending": false,
         "sources_disagree": false,
-        "note": "The label should carry this model number, but we cannot verify this without a physical label photo."
+        "note": ""
       },
       {
-        "field_name": "ratings_on_label",
-        "value": "Rated Output Power: 5 kW, Max DC Input: 1100V, Rated AC Voltage: 220/380V or 230/400V, Ingress Protection: IP65, Weight: 11 kg",
-        "source": "datasheet",
-        "confidence": "low",
-        "is_pending": true,
-        "sources_disagree": false,
-        "note": "The label should carry these ratings, but we cannot verify this without a physical label photo."
-      },
-      {
-        "field_name": "manufacturer_name_on_label",
-        "value": "Ningbo Deye Inverter Technology Co., Ltd.",
+        "field_name": "label_rated_power",
+        "value": "5 kW",
         "source": "datasheet, buyer_form",
-        "confidence": "low",
-        "is_pending": true,
+        "confidence": "high",
+        "is_pending": false,
         "sources_disagree": false,
-        "note": "The label should carry the manufacturer name, but we cannot verify this without a physical label photo."
+        "note": ""
       },
       {
-        "field_name": "country_of_origin_on_label",
-        "value": "China",
-        "source": "datasheet, buyer_form, call_notes",
-        "confidence": "low",
-        "is_pending": true,
+        "field_name": "label_max_dc_input_voltage",
+        "value": "1100 V",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
         "sources_disagree": false,
-        "note": "The label should carry the country of origin, but we cannot verify this without a physical label photo."
+        "note": ""
       },
       {
-        "field_name": "protection_rating_on_label",
+        "field_name": "label_max_dc_input_current",
+        "value": "20 A + 20 A",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "label_rated_ac_voltage",
+        "value": "3L/N/PE 220/380V, 230/400V",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "label_rated_ac_current",
+        "value": "7.6 A / 7.3 A",
+        "source": "datasheet",
+        "confidence": "medium",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "label_protection_rating",
         "value": "IP65",
         "source": "datasheet, call_notes",
-        "confidence": "low",
-        "is_pending": true,
+        "confidence": "high",
+        "is_pending": false,
         "sources_disagree": false,
-        "note": "Both datasheet and call notes agree on IP65, but we cannot verify this on the physical label without a photo."
+        "note": ""
+      },
+      {
+        "field_name": "label_manufacturer_name",
+        "value": "Ningbo Deye Inverter Technology Co., Ltd.",
+        "source": "datasheet, buyer_form",
+        "confidence": "high",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
+      },
+      {
+        "field_name": "label_country_of_origin",
+        "value": "China",
+        "source": "datasheet, buyer_form, call_notes",
+        "confidence": "high",
+        "is_pending": false,
+        "sources_disagree": false,
+        "note": ""
       }
     ],
     "importer_paperwork": [
       {
-        "field_name": "grid_connection_certificates",
-        "value": "IEC 61727, IEC 62116, EN 50549 Certificates",
-        "source": "datasheet",
-        "confidence": "low",
-        "is_pending": true,
-        "sources_disagree": false,
-        "note": "Required to verify compliance with the grid standards claimed in the datasheet."
-      },
-      {
-        "field_name": "safety_emc_certificates",
-        "value": "IEC/EN 62109-1/2, IEC/EN 61000-6-1/2/3/4 Certificates",
-        "source": "datasheet",
-        "confidence": "low",
-        "is_pending": true,
-        "sources_disagree": false,
-        "note": "Required to verify compliance with safety and electromagnetic compatibility standards."
-      },
-      {
-        "field_name": "sgs_certificate",
-        "value": "SGS Certificate",
-        "source": "call_notes",
-        "confidence": "low",
-        "is_pending": true,
-        "sources_disagree": false,
-        "note": "Required to verify the verbal claim made by the installer."
-      },
-      {
         "field_name": "product_label_photo",
-        "value": "Clear photo of the physical product label",
-        "source": "call_notes",
+        "value": "unknown/Pending",
+        "source": "none",
         "confidence": "low",
         "is_pending": true,
         "sources_disagree": false,
-        "note": "Call notes explicitly state 'No label photo yet'. This is critical to verify that the physical label matches the datasheet specs."
+        "note": "Call notes state No label photo yet. A clear photo of the physical label is required to verify that the physical unit matches the datasheet specifications."
       },
       {
-        "field_name": "user_manual",
-        "value": "Official User Manual",
-        "source": "buyer_form",
+        "field_name": "test_certificates",
+        "value": "unknown/Pending",
+        "source": "none",
         "confidence": "low",
         "is_pending": true,
         "sources_disagree": false,
-        "note": "No documents were attached to the buyer form. The manual is needed to verify installation requirements and safety instructions."
+        "note": "No certificates are currently attached (Attached docs: none in buyer form, nothing in writing in call notes). The importer needs to request these from the factory."
+      },
+      {
+        "field_name": "declaration_of_conformity",
+        "value": "unknown/Pending",
+        "source": "none",
+        "confidence": "low",
+        "is_pending": true,
+        "sources_disagree": false,
+        "note": "A standard import requirement that is currently missing from the paperwork."
       }
     ]
   },
   "reconciliation": {
     "pending_from_factory": [
       {
-        "category": "Test evidence",
-        "field": "sgs_certification_claim"
-      },
-      {
-        "category": "Test evidence",
-        "field": "written_certificates_available"
-      },
-      {
-        "category": "Labeling",
-        "field": "model_number_on_label"
-      },
-      {
-        "category": "Labeling",
-        "field": "ratings_on_label"
-      },
-      {
-        "category": "Labeling",
-        "field": "manufacturer_name_on_label"
-      },
-      {
-        "category": "Labeling",
-        "field": "country_of_origin_on_label"
-      },
-      {
-        "category": "Labeling",
-        "field": "protection_rating_on_label"
-      },
-      {
-        "category": "Importer paperwork",
-        "field": "grid_connection_certificates"
-      },
-      {
-        "category": "Importer paperwork",
-        "field": "safety_emc_certificates"
-      },
-      {
-        "category": "Importer paperwork",
-        "field": "sgs_certificate"
-      },
-      {
         "category": "Importer paperwork",
         "field": "product_label_photo"
       },
       {
         "category": "Importer paperwork",
-        "field": "user_manual"
+        "field": "test_certificates"
+      },
+      {
+        "category": "Importer paperwork",
+        "field": "declaration_of_conformity"
       }
     ],
-    "verbal_or_unverified": [],
+    "verbal_or_unverified": [
+      {
+        "category": "Test evidence",
+        "field": "certification_bodies_mentioned",
+        "value": "SGS",
+        "note": "Mentioned verbally by the installer on the phone; no written proof or certificate from SGS is currently available."
+      }
+    ],
     "conflicts_between_sources": [
       {
         "category": "Product identity",
         "field": "weight",
-        "note": "The installer guessed the weight was 'maybe 18 kg' on the phone, but the official manufacturer datasheet specifies the weight as 11 kg."
+        "note": "The datasheet specifies a weight of 11 kg, whereas the installer in the call notes guessed it might be around 18 kg."
       }
     ],
     "questions_for_factory": [
-      "Please provide written certification/test reports for sgs certification claim - a verbal mention is not sufficient for import paperwork.",
-      "Please provide written certification/test reports for written certificates available - a verbal mention is not sufficient for import paperwork.",
-      "Please provide a photo or proof sheet of the product label showing model number on label.",
-      "Please provide a photo or proof sheet of the product label showing ratings on label.",
-      "Please provide a photo or proof sheet of the product label showing manufacturer name on label.",
-      "Please provide a photo or proof sheet of the product label showing country of origin on label.",
-      "Please provide a photo or proof sheet of the product label showing protection rating on label.",
-      "Please supply: grid connection certificates.",
-      "Please supply: safety emc certificates.",
-      "Please supply: sgs certificate.",
       "Please supply: product label photo.",
-      "Please supply: user manual."
+      "Please supply: test certificates.",
+      "Please supply: declaration of conformity.",
+      "Please provide written certification/test reports for certification bodies mentioned - a verbal mention is not sufficient for import paperwork."
     ]
   }
 }
